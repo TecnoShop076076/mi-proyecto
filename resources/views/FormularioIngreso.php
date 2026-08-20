@@ -1,333 +1,367 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
 
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-button:hover {
-  opacity: 0.8;
-}
+    <title>Ingreso</title>
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
+    <!-- CSS de Laravel -->
+    <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-
-</style>
 </head>
-<body>
 
-<h2>Modal Login Form</h2>
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+<body class="ingreso">
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+
+    <!-- =================================
+         LOGIN
+         ================================= -->
+
+    <h2>Modal Login Form</h2>
+
+    <button
+        onclick="document.getElementById('id01').style.display='block'"
+        style="width:auto;">
+
+        Login
+
+    </button>
+
+
+    <!-- =================================
+         MODAL LOGIN
+         ================================= -->
+
+    <div id="id01" class="modal">
+
+        <form
+            class="modal-content animate"
+            action="/action_page.php"
+            method="post">
+
+
+            <!-- Imagen -->
+
+            <div class="imgcontainer">
+
+                <span
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="close"
+                    title="Cerrar">
+
+                    &times;
+
+                </span>
+
+
+                <img
+                    src="{{ asset('Imagen/img_avatar2.png') }}"
+                    alt="Avatar"
+                    class="avatar">
+
+            </div>
+
+
+            <!-- Datos -->
+
+            <div class="container">
+
+                <label for="uname">
+                    <b>Username</b>
+                </label>
+
+
+                <input
+                    type="text"
+                    placeholder="Enter Username"
+                    name="uname"
+                    id="uname"
+                    required>
+
+
+                <label for="psw">
+                    <b>Password</b>
+                </label>
+
+
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="psw"
+                    required>
+
+
+                <button type="submit">
+                    Login
+                </button>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        checked="checked"
+                        name="remember">
+
+                    Remember me
+
+                </label>
+
+            </div>
+
+
+            <!-- Parte inferior -->
+
+            <div
+                class="container"
+                style="background-color:#f1f1f1">
+
+
+                <button
+                    type="button"
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">
+
+                    Cancel
+
+                </button>
+
+
+                <span class="psw">
+
+                    Forgot
+
+                    <a href="#">
+                        password?
+                    </a>
+
+                </span>
+
+            </div>
+
+        </form>
+
     </div>
 
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+
+    <!-- =================================
+         SIGN UP
+         ================================= -->
+
+    <h2>Modal Signup Form</h2>
+
+
+    <button
+        onclick="document.getElementById('id02').style.display='block'"
+        style="width:auto;">
+
+        Sign Up
+
+    </button>
+
+
+
+    <!-- =================================
+         MODAL SIGN UP
+         ================================= -->
+
+    <div id="id02" class="modal">
+
+
+        <span
+            onclick="document.getElementById('id02').style.display='none'"
+            class="close"
+            title="Cerrar">
+
+            &times;
+
+        </span>
+
+
+        <form
+            class="modal-content animate"
+            action="/action_page.php"
+            method="post">
+
+
+            <div class="container">
+
+
+                <h1>Sign Up</h1>
+
+
+                <p>
+                    Please fill in this form to create an account.
+                </p>
+
+
+                <hr>
+
+
+
+                <!-- Email -->
+
+                <label for="email">
+
+                    <b>Email</b>
+
+                </label>
+
+
+                <input
+                    type="text"
+                    placeholder="Enter Email"
+                    name="email"
+                    id="email"
+                    required>
+
+
+
+                <!-- Password -->
+
+                <label for="signup-psw">
+
+                    <b>Password</b>
+
+                </label>
+
+
+                <input
+                    type="password"
+                    placeholder="Enter Password"
+                    name="psw"
+                    id="signup-psw"
+                    required>
+
+
+
+                <!-- Repetir contraseña -->
+
+                <label for="psw-repeat">
+
+                    <b>Repeat Password</b>
+
+                </label>
+
+
+                <input
+                    type="password"
+                    placeholder="Repeat Password"
+                    name="psw-repeat"
+                    id="psw-repeat"
+                    required>
+
+
+
+                <!-- Recordarme -->
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        checked="checked"
+                        name="remember"
+                        style="margin-bottom:15px">
+
+                    Remember me
+
+                </label>
+
+
+
+                <!-- Términos -->
+
+                <p>
+
+                    By creating an account you agree to our
+
+                    <a
+                        href="#"
+                        style="color:dodgerblue">
+
+                        Terms & Privacy
+
+                    </a>.
+
+                </p>
+
+
+
+                <!-- Botones -->
+
+                <div class="clearfix">
+
+
+                    <button
+                        type="button"
+                        onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="signupbtn">
+
+                        Sign Up
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </form>
+
     </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
+
+    <!-- =================================
+         JAVASCRIPT
+         ================================= -->
+
+    <script>
+
+        // Modal Login
+        var modalLogin = document.getElementById('id01');
+
+        // Modal Sign Up
+        var modalSignup = document.getElementById('id02');
 
 
-<h2>Modal Signup Form</h2>
+        // Cerrar los modales al hacer clic afuera
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>
+        window.onclick = function(event) {
 
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+            if (event.target === modalLogin) {
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+                modalLogin.style.display = "none";
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      
-      <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-      </label>
+            }
 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
-</div>
+            if (event.target === modalSignup) {
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
+                modalSignup.style.display = "none";
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+            }
 
-// Get the modal
-var modal = document.getElementById('id01');
+        };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+    </script>
 
-</script>
 
 </body>
-</html>
 
+</html>
