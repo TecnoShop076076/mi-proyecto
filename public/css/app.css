@@ -444,39 +444,404 @@ body {
     }
 }
 
+
 /* =================================
    CARDS
    ================================= */
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    max-width: 300px;
+
+    margin: auto;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .price {
-  color: grey;
-  font-size: 22px;
+    color: grey;
+
+    font-size: 22px;
 }
 
 .card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
+    border: none;
+
+    outline: 0;
+
+    padding: 12px;
+
+    color: white;
+
+    background-color: #000;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    font-size: 18px;
 }
 
 .card button:hover {
-  opacity: 0.7;
+    opacity: 0.7;
 }
 
-.card button:hover {
-  opacity: 0.7;
+
+/* =================================
+   FORMULARIO - INGRESO
+   ================================= */
+
+.ingreso {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Campos de texto */
+
+.ingreso input[type=text],
+.ingreso input[type=password] {
+    width: 100%;
+
+    padding: 15px;
+
+    margin: 5px 0 22px 0;
+
+    display: inline-block;
+
+    border: none;
+
+    background: #f1f1f1;
+
+    box-sizing: border-box;
+}
+
+
+/* Cuando se selecciona un campo */
+
+.ingreso input[type=text]:focus,
+.ingreso input[type=password]:focus {
+    background-color: #ddd;
+
+    outline: none;
+}
+
+
+/* Botones */
+
+.ingreso button {
+    background-color: #04AA6D;
+
+    color: white;
+
+    padding: 14px 20px;
+
+    margin: 8px 0;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    opacity: 0.9;
+}
+
+.ingreso button:hover {
+    opacity: 1;
+}
+
+
+/* Botón cancelar */
+
+.ingreso .cancelbtn {
+    padding: 14px 20px;
+
+    background-color: #f44336;
+}
+
+
+/* Botones Cancelar y Registrarse */
+
+.ingreso .cancelbtn,
+.ingreso .signupbtn {
+    float: left;
+
+    width: 50%;
+}
+
+
+/* Contenedor */
+
+.ingreso .container {
+    padding: 16px;
+}
+
+
+/* Modal */
+
+.ingreso .modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    padding-top: 50px;
+}
+
+
+/* Contenido del modal */
+
+.ingreso .modal-content {
+    background-color: #fefefe;
+
+    margin: 5% auto 15% auto;
+
+    border: 1px solid #888;
+
+    width: 80%;
+}
+
+
+/* Botón X */
+
+.ingreso .close {
+    position: absolute;
+
+    right: 35px;
+
+    top: 15px;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    color: #f1f1f1;
+}
+
+.ingreso .close:hover,
+.ingreso .close:focus {
+    color: #f44336;
+
+    cursor: pointer;
+}
+
+
+/* Animación */
+
+.ingreso .animate {
+    animation: animatezoom 0.6s;
+}
+
+@keyframes animatezoom {
+
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* Línea horizontal */
+
+.ingreso hr {
+    border: 1px solid #f1f1f1;
+
+    margin-bottom: 25px;
+}
+
+
+/* Limpiar floats */
+
+.ingreso .clearfix::after {
+    content: "";
+
+    clear: both;
+
+    display: table;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 300px) {
+
+    .ingreso .cancelbtn,
+    .ingreso .signupbtn {
+        width: 100%;
+    }
+}
+
+
+/* =================================
+   CARRITO
+   ================================= */
+
+/*
+   IMPORTANTE:
+   Las reglas del carrito están aisladas
+   dentro de .carrito para que no afecten
+   al formulario de ingreso.
+*/
+
+body.carrito {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    padding: 8px;
+}
+
+
+/* Layout */
+
+.carrito .row {
+    display: -ms-flexbox;
+
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+
+    flex-wrap: wrap;
+
+    margin: 0 -16px;
+}
+
+.carrito .col-25 {
+    -ms-flex: 25%;
+
+    flex: 25%;
+}
+
+.carrito .col-50 {
+    -ms-flex: 50%;
+
+    flex: 50%;
+}
+
+.carrito .col-75 {
+    -ms-flex: 75%;
+
+    flex: 75%;
+}
+
+.carrito .col-25,
+.carrito .col-50,
+.carrito .col-75 {
+    padding: 0 16px;
+}
+
+
+/* Contenedor */
+
+.carrito .container {
+    background-color: #f2f2f2;
+
+    padding: 5px 20px 15px 20px;
+
+    border: 1px solid lightgrey;
+
+    border-radius: 3px;
+}
+
+
+/* Campos */
+
+.carrito input[type=text] {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+}
+
+.carrito label {
+    margin-bottom: 10px;
+
+    display: block;
+}
+
+.carrito .icon-container {
+    margin-bottom: 20px;
+
+    padding: 7px 0;
+
+    font-size: 24px;
+}
+
+
+/* Botón */
+
+.carrito .btn {
+    background-color: #04AA6D;
+
+    color: white;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: none;
+
+    width: 100%;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+}
+
+.carrito .btn:hover {
+    background-color: #45a049;
+}
+
+.carrito a {
+    color: #2196F3;
+}
+
+.carrito hr {
+    border: 1px solid lightgrey;
+}
+
+.carrito span.price {
+    float: right;
+
+    color: grey;
+}
+
+
+/* Responsive del carrito */
+
+@media (max-width: 800px) {
+
+    .carrito .row {
+        flex-direction: column-reverse;
+    }
+
+    .carrito .col-25 {
+        margin-bottom: 20px;
+    }
 }

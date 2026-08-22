@@ -10,7 +10,8 @@
     <title>Ingreso</title>
 
     <!-- CSS de Laravel -->
-    <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 
 </head>
 

@@ -68,3 +68,35 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+        //=================================
+        // JAVASCRIPT
+       //  ================================= -->
+
+
+
+        // Modal Login
+        var modalLogin = document.getElementById('id01');
+
+        // Modal Sign Up
+        var modalSignup = document.getElementById('id02');
+
+
+        // Cerrar los modales al hacer clic afuera
+
+        window.onclick = function(event) {
+
+            if (event.target === modalLogin) {
+
+                modalLogin.style.display = "none";
+
+            }
+
+
+            if (event.target === modalSignup) {
+
+                modalSignup.style.display = "none";
+
+            }
+
+        };
