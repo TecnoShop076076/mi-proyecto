@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -9,8 +10,10 @@
 
     <title>Ingreso</title>
 
-    <!-- CSS de Laravel -->
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+
     <script src="{{ asset('js/app.js') }}"></script>
 
 </head>
@@ -19,11 +22,8 @@
 <body class="ingreso">
 
 
-    <!-- =================================
-         LOGIN
-         ================================= -->
-
     <h2>Modal Login Form</h2>
+
 
     <button
         onclick="document.getElementById('id01').style.display='block'"
@@ -34,21 +34,23 @@
     </button>
 
 
-    <!-- =================================
-         MODAL LOGIN
-         ================================= -->
 
     <div id="id01" class="modal">
 
+
         <form
             class="modal-content animate"
-            action="/action_page.php"
-            method="post">
+            action="{{ route('login') }}"
+            method="POST">
 
 
-            <!-- Imagen -->
+            @csrf
+
+
+
 
             <div class="imgcontainer">
+
 
                 <span
                     onclick="document.getElementById('id01').style.display='none'"
@@ -68,38 +70,46 @@
             </div>
 
 
-            <!-- Datos -->
+
+
 
             <div class="container">
 
-                <label for="uname">
-                    <b>Username</b>
+
+                <label for="email">
+
+                    <b>Email</b>
+
                 </label>
 
 
                 <input
-                    type="text"
-                    placeholder="Enter Username"
-                    name="uname"
-                    id="uname"
+                    type="email"
+                    placeholder="Ingrese su email"
+                    name="email"
+                    id="email"
                     required>
 
 
                 <label for="psw">
+
                     <b>Password</b>
+
                 </label>
 
 
                 <input
                     type="password"
-                    placeholder="Enter Password"
-                    name="psw"
+                    placeholder="Ingrese su contraseña"
+                    name="password"
                     id="psw"
                     required>
 
 
                 <button type="submit">
+
                     Login
+
                 </button>
 
 
@@ -117,7 +127,8 @@
             </div>
 
 
-            <!-- Parte inferior -->
+
+
 
             <div
                 class="container"
@@ -138,8 +149,11 @@
 
                     Forgot
 
+
                     <a href="#">
+
                         password?
+
                     </a>
 
                 </span>
@@ -151,10 +165,6 @@
     </div>
 
 
-
-    <!-- =================================
-         SIGN UP
-         ================================= -->
 
     <h2>Modal Signup Form</h2>
 
@@ -169,10 +179,6 @@
 
 
 
-    <!-- =================================
-         MODAL SIGN UP
-         ================================= -->
-
     <div id="id02" class="modal">
 
 
@@ -186,28 +192,56 @@
         </span>
 
 
+        
         <form
             class="modal-content animate"
-            action="/action_page.php"
-            method="post">
+            action="{{ route('register') }}"
+            method="POST">
+
+
+            @csrf
 
 
             <div class="container">
 
 
+                
                 <h1>Sign Up</h1>
 
 
+                
                 <p>
                     Please fill in this form to create an account.
                 </p>
 
 
+                
                 <hr>
 
 
 
-                <!-- Email -->
+
+
+
+                <label for="name">
+
+                    <b>Nombre</b>
+
+                </label>
+
+
+                
+                <input
+                    type="text"
+                    placeholder="Ingrese su nombre"
+                    name="name"
+                    id="name"
+                    required>
+
+
+
+
+
 
                 <label for="email">
 
@@ -216,16 +250,18 @@
                 </label>
 
 
+                
                 <input
-                    type="text"
-                    placeholder="Enter Email"
+                    type="email"
+                    placeholder="Ingrese su email"
                     name="email"
                     id="email"
                     required>
 
 
 
-                <!-- Password -->
+                
+
 
                 <label for="signup-psw">
 
@@ -234,16 +270,17 @@
                 </label>
 
 
+                
                 <input
                     type="password"
-                    placeholder="Enter Password"
-                    name="psw"
+                    placeholder="Ingrese su contraseña"
+                    name="password"
                     id="signup-psw"
                     required>
 
 
 
-                <!-- Repetir contraseña -->
+                
 
                 <label for="psw-repeat">
 
@@ -252,22 +289,24 @@
                 </label>
 
 
+                
                 <input
                     type="password"
-                    placeholder="Repeat Password"
-                    name="psw-repeat"
+                    placeholder="Repita su contraseña"
+                    name="password_confirmation"
                     id="psw-repeat"
                     required>
 
 
 
-                <!-- Recordarme -->
+
+
 
                 <label>
 
+                   
                     <input
                         type="checkbox"
-                        checked="checked"
                         name="remember"
                         style="margin-bottom:15px">
 
@@ -277,12 +316,15 @@
 
 
 
-                <!-- Términos -->
+
+
 
                 <p>
 
                     By creating an account you agree to our
 
+
+                    
                     <a
                         href="#"
                         style="color:dodgerblue">
@@ -295,11 +337,13 @@
 
 
 
-                <!-- Botones -->
+                
+
 
                 <div class="clearfix">
 
 
+                    
                     <button
                         type="button"
                         onclick="document.getElementById('id02').style.display='none'"
@@ -310,6 +354,7 @@
                     </button>
 
 
+                    
                     <button
                         type="submit"
                         class="signupbtn">
@@ -317,7 +362,6 @@
                         Sign Up
 
                     </button>
-
 
                 </div>
 
@@ -328,37 +372,47 @@
     </div>
 
 
-    <!-- =================================
-         JAVASCRIPT
-         ================================= -->
+
+
+
 
     <script>
 
-        // Modal Login
+
+
         var modalLogin = document.getElementById('id01');
 
-        // Modal Sign Up
+
+        
         var modalSignup = document.getElementById('id02');
 
 
-        // Cerrar los modales al hacer clic afuera
 
+        
         window.onclick = function(event) {
 
+
+            
             if (event.target === modalLogin) {
 
+
+                
                 modalLogin.style.display = "none";
 
             }
 
 
+            
             if (event.target === modalSignup) {
 
+
+                
                 modalSignup.style.display = "none";
 
             }
 
         };
+
 
     </script>
 
