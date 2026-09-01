@@ -15,7 +15,7 @@ use App\Models\User;
 
 
 
-class RegistroController extends Controller
+class RegisterController extends Controller
 {
 
     

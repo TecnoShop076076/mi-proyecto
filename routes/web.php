@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegistroController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
@@ -18,5 +18,5 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])
 Route::post('/login', [LoginController::class, 'login'])
     ->name('login');
 
-Route::post('/register', [RegistroController::class, 'register'])
+Route::post('/register', [RegisterController::class, 'register'])
     ->name('register');
