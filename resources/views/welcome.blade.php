@@ -15,9 +15,7 @@
 
 </head>
 
-
 <body>
-
 
     <!-- =========================
          BARRA SUPERIOR
@@ -25,11 +23,9 @@
 
     <div class="barra-info">
 
-
         <!-- IZQUIERDA -->
 
         <div class="info-izquierda">
-
 
             <div class="info-item">
 
@@ -41,9 +37,7 @@
 
             </div>
 
-
             <div class="separador"></div>
-
 
             <div class="info-item">
 
@@ -55,9 +49,7 @@
 
             </div>
 
-
             <div class="separador"></div>
-
 
             <div class="info-item">
 
@@ -69,14 +61,11 @@
 
             </div>
 
-
         </div>
-
 
         <!-- DERECHA -->
 
         <div class="info-derecha">
-
 
             <div class="info-item">
 
@@ -88,7 +77,6 @@
 
             </div>
 
-
             <div class="info-item">
 
                 <i class="fa-regular fa-user"></i>
@@ -99,12 +87,9 @@
 
             </div>
 
-
         </div>
 
-
     </div>
-
 
 
     <!-- =========================
@@ -118,13 +103,11 @@
 >
 
 
-
     <!-- =========================
          BARRA DE NAVEGACIÓN
          ========================= -->
 
     <div class="topnav">
-
 
         <!-- INGRESAR -->
 
@@ -132,20 +115,17 @@
             Ingresar
         </a>
 
-
         <!-- PROMOCIONES -->
 
         <a href="{{ url('/promociones') }}">
             Promociones
         </a>
 
-
         <!-- CARRITO -->
 
         <a href="{{ url('/carrito') }}">
             Carrito
         </a>
-
 
         <!-- BUSCADOR -->
 
@@ -169,9 +149,7 @@
 
         </div>
 
-
     </div>
-
 
 
     <!-- =========================
@@ -179,7 +157,6 @@
          ========================= -->
 
     <div class="slideshow-container">
-
 
         <!-- OFERTA 1 -->
 
@@ -200,7 +177,6 @@
         </div>
 
 
-
         <!-- OFERTA 2 -->
 
         <div class="mySlides fade">
@@ -218,7 +194,6 @@
             </div>
 
         </div>
-
 
 
         <!-- OFERTA 3 -->
@@ -241,7 +216,6 @@
         </div>
 
 
-
         <!-- BOTÓN ANTERIOR -->
 
         <a
@@ -250,7 +224,6 @@
         >
             ❮
         </a>
-
 
         <!-- BOTÓN SIGUIENTE -->
 
@@ -261,9 +234,7 @@
             ❯
         </a>
 
-
     </div>
-
 
 
     <!-- =========================
@@ -289,38 +260,54 @@
 
     </div>
 
-<h2 style="text-align:center">Product Card</h2>
+<h2 style="text-align:center">Productos</h2>
 
 <div class="card">
-  <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>nombre producto</h1>
-  <p class="price">$19.99</p>
-  <p>text del producto.</p>
-  <p><button>Agregar al Carrito</button></p>
+    <img src="/w3images/jeans3.jpg" alt="Remera" style="width:100%">
+    <h1>Remera</h1>
+    <p class="price">$500</p>
+    <p>Remera de prueba.</p>
+    <p>
+        <button onclick="agregarAlCarrito('Remera', 500)">
+            Agregar al Carrito
+        </button>
+    </p>
 </div>
 
 <div class="card">
-  <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>nombre producto</h1>
-  <p class="price">$19.99</p>
-  <p>text del producto.</p>
-  <p><button>Agregar al Carrito</button></p>
+    <img src="/w3images/jeans3.jpg" alt="Pantalón" style="width:100%">
+    <h1>Pantalón</h1>
+    <p class="price">$1200</p>
+    <p>Pantalón de prueba.</p>
+    <p>
+        <button onclick="agregarAlCarrito('Pantalón', 1200)">
+            Agregar al Carrito
+        </button>
+    </p>
 </div>
 
 <div class="card">
-  <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>nombre producto</h1>
-  <p class="price">$19.99</p>
-  <p>text del producto.</p>
-  <p><button>Agregar al Carrito</button></p>
+    <img src="/w3images/jeans3.jpg" alt="Gorra" style="width:100%">
+    <h1>Gorra</h1>
+    <p class="price">$300</p>
+    <p>Gorra de prueba.</p>
+    <p>
+        <button onclick="agregarAlCarrito('Gorra', 300)">
+            Agregar al Carrito
+        </button>
+    </p>
 </div>
 
 <div class="card">
-  <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>nombre producto</h1>
-  <p class="price">$19.99</p>
-  <p>text del producto.</p>
-  <p><button>Agregar al Carrito</button></p>
+    <img src="/w3images/jeans3.jpg" alt="Zapatillas" style="width:100%">
+    <h1>Zapatillas</h1>
+    <p class="price">$2500</p>
+    <p>Zapatillas de prueba.</p>
+    <p>
+        <button onclick="agregarAlCarrito('Zapatillas', 2500)">
+            Agregar al Carrito
+        </button>
+    </p>
 </div>
 
     <!-- =========================
@@ -328,75 +315,35 @@
          ========================= -->
 
     <script>
+    </script>
 
-        let slideIndex = 1;
+    <script>
 
-        showSlides(slideIndex);
+        function agregarAlCarrito(nombre, precio) {
 
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-        function plusSlides(n) {
+            let producto = carrito.find(
+                producto => producto.nombre === nombre
+            );
 
-            showSlides(slideIndex += n);
-
-        }
-
-
-        function currentSlide(n) {
-
-            showSlides(slideIndex = n);
-
-        }
-
-
-        function showSlides(n) {
-
-            let i;
-
-            let slides =
-                document.getElementsByClassName("mySlides");
-
-            let dots =
-                document.getElementsByClassName("dot");
-
-
-            if (n > slides.length) {
-
-                slideIndex = 1;
-
+            if (producto) {
+                producto.cantidad++;
+            } else {
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
             }
 
+            localStorage.setItem('carrito', JSON.stringify(carrito));
 
-            if (n < 1) {
-
-                slideIndex = slides.length;
-
-            }
-
-
-            for (i = 0; i < slides.length; i++) {
-
-                slides[i].style.display = "none";
-
-            }
-
-
-            for (i = 0; i < dots.length; i++) {
-
-                dots[i].className =
-                    dots[i].className.replace(" active", "");
-
-            }
-
-
-            slides[slideIndex - 1].style.display = "block";
-
-            dots[slideIndex - 1].className += " active";
+            alert(nombre + ' agregado al carrito');
 
         }
 
     </script>
 
-
 </body>
-
 </html>
