@@ -44,7 +44,7 @@
             method="POST">
 
 
-            @csrf
+            @csrf 
 
 
 
@@ -211,7 +211,7 @@
 
                 
                 <p>
-                    Please fill in this form to create an account.
+                    Por favor, completá este formulario para crear una cuenta.
                 </p>
 
 
@@ -321,7 +321,7 @@
 
                 <p>
 
-                    By creating an account you agree to our
+                    Al crear una cuenta, aceptás nuestros terminios
 
 
                     

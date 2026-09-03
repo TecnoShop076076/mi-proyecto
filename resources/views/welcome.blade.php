@@ -181,8 +181,8 @@
 
         <div class="mySlides fade">
 
-            <div class="numbertext">
-                2 / 3
+        <div class="numbertext">   
+                2 / 3 
             </div>
 
 <img
