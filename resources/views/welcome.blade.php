@@ -2,11 +2,11 @@
 <html lang="es">
 
 <head>
-
+<link rel="icon" type="image/jpg" href="{{ asset('Imagenes/favicon.jpg') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mi página</title>
+    <title>TecnoShop - Tu tienda de tecnología</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
