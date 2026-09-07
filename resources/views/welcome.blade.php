@@ -16,6 +16,15 @@
 </head>
 
 <body>
+        <!-- =========================
+         LOGO
+         ========================= -->
+
+<img
+    src="{{ asset('Imagenes/Logo.jpeg') }}"
+    alt="Logo de la tienda"
+    class="logo"
+>
 
     <!-- =========================
          BARRA SUPERIOR
@@ -92,15 +101,7 @@
     </div>
 
 
-    <!-- =========================
-         LOGO
-         ========================= -->
 
-<img
-    src="{{ asset('Imagenes/Logo.jpeg') }}"
-    alt="Logo de la tienda"
-    class="logo"
->
 
 
     <!-- =========================
