@@ -12,6 +12,10 @@ Route::get('/carrito', function () {
     return view('carrito');
 });
 
+Route::get('/admin', function () {
+    return view('admin');
+})->middleware('admin');
+
 Route::get('/login', [LoginController::class, 'showLoginForm'])
     ->name('login.form');
 
