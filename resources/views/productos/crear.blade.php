@@ -16,7 +16,7 @@
 <body>
     <h1>Registrar Producto</h1>
     <div class="form-box">
-        <form action="{{ route('productos.guardar') }}" method="POST">
+        <form action="{{ route('productos.guardar') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <label>Nombre *</label>
@@ -59,6 +59,10 @@
                 @endforeach
             </select>
             @error('id_categoria')<div class="error">{{ $message }}</div>@enderror
+
+            <label>Imagen del producto</label>
+            <input type="file" name="imagen" accept="image/*" style="width:100%; padding:6px;">
+            @error('imagen')<div class="error">{{ $message }}</div>@enderror
 
             <br>
             <button type="submit" class="btn">Guardar producto</button>

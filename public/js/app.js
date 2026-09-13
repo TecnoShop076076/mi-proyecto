@@ -47,7 +47,7 @@ function showSlides(n) {
     }
 }
 
-c
+
 
 // Get the modal
 var modal = document.getElementById('id01');

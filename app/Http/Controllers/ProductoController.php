@@ -73,6 +73,11 @@ class ProductoController extends Controller
                     'required',
                     'integer',
                     'exists:categorias,id_categoria'
+                ],
+                'imagen' => [
+                    'nullable',
+                    'image',
+                    'max:2048'
                 ]
             ],
             [
@@ -98,6 +103,13 @@ class ProductoController extends Controller
             ]
         );
 
+        $nombreImagen = null;
+        if ($request->hasFile('imagen')) {
+            $archivo = $request->file('imagen');
+            $nombreImagen = time() . '_' . $archivo->getClientOriginalName();
+            $archivo->move(public_path('Imagenes'), $nombreImagen);
+        }
+
         DB::table('productos')->insert([
             'nombre' => $datosValidados['nombre'],
             'codigo' => $datosValidados['codigo'],
@@ -105,7 +117,8 @@ class ProductoController extends Controller
             'precio' => $datosValidados['precio'],
             'stock' => $datosValidados['stock'],
             'proveedor' => $datosValidados['proveedor'] ?? null,
-            'id_categoria' => $datosValidados['id_categoria']
+            'id_categoria' => $datosValidados['id_categoria'],
+            'imagen' => $nombreImagen
         ]);
 
         return redirect()
