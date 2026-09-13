@@ -263,53 +263,25 @@
 
 <h2 style="text-align:center">Productos</h2>
 
+@forelse($productos as $p)
 <div class="card">
-    <img src="/w3images/jeans3.jpg" alt="Remera" style="width:100%">
-    <h1>Remera</h1>
-    <p class="price">$500</p>
-    <p>Remera de prueba.</p>
+    <!-- IMAGEN MANUAL: colocá tu archivo en public/Imagenes/producto-{{ $p->id_producto }}.jpg -->
+    <img src="{{ asset('Imagenes/producto-' . $p->id_producto . '.jpg') }}" alt="{{ $p->nombre }}" style="width:100%" onerror="this.src='https://via.placeholder.com/300x200?text=Producto';">
+    <h1>{{ $p->nombre }}</h1>
+    <p class="price">${{ $p->precio }}</p>
+    <p>{{ $p->descripcion ?? 'Sin descripción.' }}</p>
     <p>
-        <button onclick="agregarAlCarrito('Remera', 500)">
+        <button onclick="agregarAlCarrito('{{ $p->nombre }}', {{ $p->precio }})">
             Agregar al Carrito
         </button>
     </p>
 </div>
-
-<div class="card">
-    <img src="/w3images/jeans3.jpg" alt="Pantalón" style="width:100%">
-    <h1>Pantalón</h1>
-    <p class="price">$1200</p>
-    <p>Pantalón de prueba.</p>
-    <p>
-        <button onclick="agregarAlCarrito('Pantalón', 1200)">
-            Agregar al Carrito
-        </button>
-    </p>
+@empty
+<div style="text-align:center; padding: 30px; color: #777;">
+    No hay productos registrados en la base de datos.<br>
+    <a href="/productos/crear" style="color:#1599df">Crear producto →</a>
 </div>
-
-<div class="card">
-    <img src="/w3images/jeans3.jpg" alt="Gorra" style="width:100%">
-    <h1>Gorra</h1>
-    <p class="price">$300</p>
-    <p>Gorra de prueba.</p>
-    <p>
-        <button onclick="agregarAlCarrito('Gorra', 300)">
-            Agregar al Carrito
-        </button>
-    </p>
-</div>
-
-<div class="card">
-    <img src="/w3images/jeans3.jpg" alt="Zapatillas" style="width:100%">
-    <h1>Zapatillas</h1>
-    <p class="price">$2500</p>
-    <p>Zapatillas de prueba.</p>
-    <p>
-        <button onclick="agregarAlCarrito('Zapatillas', 2500)">
-            Agregar al Carrito
-        </button>
-    </p>
-</div>
+@endforelse
 
     <!-- =========================
          JAVASCRIPT

@@ -1,11 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
-    return view('welcome');
+    $productos = DB::table('productos')
+        ->select('id_producto', 'nombre', 'descripcion', 'precio')
+        ->orderBy('nombre')
+        ->get();
+    return view('welcome', compact('productos'));
 });
 
 Route::get('/carrito', function () {
