@@ -118,8 +118,8 @@
 
         <!-- PROMOCIONES -->
 
-        <a href="{{ url('/promociones') }}">
-            Promociones
+        <a href="{{ url('/productos') }}">
+            Productos
         </a>
 
         <!-- CARRITO -->
@@ -191,7 +191,7 @@
     alt="Oferta 2"
 >
             <div class="text">
-                Promociones
+                Productos
             </div>
 
         </div>

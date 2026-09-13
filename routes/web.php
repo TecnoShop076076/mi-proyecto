@@ -24,3 +24,9 @@ Route::post('/login', [LoginController::class, 'login'])
 
 Route::post('/register', [RegisterController::class, 'register'])
     ->name('register');
+
+use App\Http\Controllers\ProductoController;
+
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::get('/productos/crear', [ProductoController::class, 'crear'])->name('productos.crear');
+Route::post('/productos/guardar', [ProductoController::class, 'guardar'])->name('productos.guardar');
