@@ -695,12 +695,6 @@ body {
    CARRITO
    ================================= */
 
-/*
-   IMPORTANTE:
-   Las reglas del carrito están aisladas
-   dentro de .carrito para que no afecten
-   al formulario de ingreso.
-*/
 
 body.carrito {
     font-family: Arial, Helvetica, sans-serif;
