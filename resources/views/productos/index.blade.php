@@ -19,8 +19,7 @@
 <body>
     <h1>Productos</h1>
     <a href="{{ route('productos.crear') }}" class="btn"><i class="fa-solid fa-plus"></i> Nuevo producto</a>
-    <a href="{{ route('productos.editar') }}" class="btn"><i class="fa-solid fa-edit"></i> Editar producto</a>
-
+    
     @if(session('mensaje'))
         <div style="background:#e0ffe0; padding:10px; margin:15px 0; border-left:4px solid #388e3c;">{{ session('mensaje') }}</div>
     @endif
@@ -28,7 +27,7 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th><th>Nombre</th><th>Código</th><th>Precio</th><th>Stock</th><th>Categoría</th><th>Proveedor</th>
+                <th>ID</th><th>Nombre</th><th>Código</th><th>Precio</th><th>Stock</th><th>Categoría</th><th>Proveedor</th><th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +40,7 @@
                 <td>{{ $p->stock }}</td>
                 <td>{{ $p->categoria_nombre }}</td>
                 <td>{{ $p->proveedor_nombre ?? '-' }}</td>
+                <td><a href="{{ route('productos.editar', $p->id_producto) }}" class="btn" style="padding:4px 10px;font-size:12px;">Editar</a></td>
             </tr>
             @empty
             <tr><td colspan="7">No hay productos registrados.</td></tr>

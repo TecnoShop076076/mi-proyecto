@@ -265,8 +265,8 @@
 
 @forelse($productos as $p)
 <div class="card">
-    <!-- IMAGEN MANUAL: colocá tu archivo en public/Imagenes/producto-{{ $p->id_producto }}.jpg -->
-    <img src="{{ asset('Imagenes/producto-' . $p->id_producto . '.jpg') }}" alt="{{ $p->nombre }}" style="width:100%" onerror="this.src='https://via.placeholder.com/300x200?text=Producto';">
+    <!-- IMAGEN MANUAL: colocá tu archivo en public/Imagenes/producto_{{ $p->id_producto }}.jpg -->
+    <img src="{{ asset('Imagenes/producto_' . $p->id_producto . '.webp') }}" alt="{{ $p->nombre }}" style="width:100%" onerror="this.onerror=function(){this.onerror=function(){this.src='https://via.placeholder.com/300x200?text=Producto';};this.src='{{ asset('Imagenes/producto_' . $p->id_producto . '.png') }}';};this.src='{{ asset('Imagenes/producto_' . $p->id_producto . '.jpg') }}';">
     <h1>{{ $p->nombre }}</h1>
     <p class="price">${{ $p->precio }}</p>
     <p>{{ $p->descripcion ?? 'Sin descripción.' }}</p>
