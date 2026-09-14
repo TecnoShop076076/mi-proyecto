@@ -35,3 +35,6 @@ use App\Http\Controllers\ProductoController;
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
 Route::get('/productos/crear', [ProductoController::class, 'crear'])->name('productos.crear');
 Route::post('/productos/guardar', [ProductoController::class, 'guardar'])->name('productos.guardar');
+
+Route::get('/productos/{id}/editar', [ProductoController::class, 'editar'])->name('productos.editar');
+Route::post('/productos/{id}/actualizar', [ProductoController::class, 'actualizar'])->name('productos.actualizar');

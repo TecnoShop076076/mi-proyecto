@@ -19,6 +19,7 @@
 <body>
     <h1>Productos</h1>
     <a href="{{ route('productos.crear') }}" class="btn"><i class="fa-solid fa-plus"></i> Nuevo producto</a>
+    <a href="{{ route('productos.editar') }}" class="btn"><i class="fa-solid fa-edit"></i> Editar producto</a>
 
     @if(session('mensaje'))
         <div style="background:#e0ffe0; padding:10px; margin:15px 0; border-left:4px solid #388e3c;">{{ session('mensaje') }}</div>
